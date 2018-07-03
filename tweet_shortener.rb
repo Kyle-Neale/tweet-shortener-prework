@@ -12,3 +12,12 @@ def dictionary
     "for" => "4"
   }
 end
+
+def word_substituter(string)
+  words = string.split(' ').downcase
+  words.each do |word|
+    if word == dictionary[word]
+      word = dictionary[word]
+    end
+  end
+end
