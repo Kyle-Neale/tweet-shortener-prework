@@ -13,12 +13,12 @@ def dictionary
   }
 end
 
-def word_substituter(tweet)
+def word_substituter(string)
   new_words = []
   words = string.split(' ')
   words.each do |word|
     if dictionary[word.downcase] != nil
-      word = dictionary[word]
+      word = dictionary[word.downcase]
       new_words << word
     else
       new_words << word
@@ -27,7 +27,9 @@ def word_substituter(tweet)
   return new_words.join(' ')
 end
 
+
 def bulk_tweet_shortener(tweets)
   tweets.each do |tweet|
     puts word_substituter(tweet)
-  end
+    end
+end
