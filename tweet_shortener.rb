@@ -13,7 +13,7 @@ def dictionary
   }
 end
 
-def word_substituter(string)
+def word_substituter(tweet)
   new_words = []
   words = string.split(' ')
   words.each do |word|
@@ -26,3 +26,8 @@ def word_substituter(string)
   end
   return new_words.join(' ')
 end
+
+def bulk_tweet_shortener(tweets)
+  tweets.each do |tweet|
+    puts word_substituter(tweet)
+  end
