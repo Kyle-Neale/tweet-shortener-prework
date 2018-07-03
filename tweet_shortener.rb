@@ -14,10 +14,15 @@ def dictionary
 end
 
 def word_substituter(string)
-  words = string.split(' ').downcase
+  new_words = []
+  words = string.split(' ')
   words.each do |word|
-    if word == dictionary[word]
+    if dictionary[word.downcase] != nil
       word = dictionary[word]
+      new_words << word
+    else
+      new_words << word
     end
   end
+  return new_words.join(' ')
 end
